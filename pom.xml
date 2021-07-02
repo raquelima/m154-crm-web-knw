@@ -86,6 +86,53 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.36.1</version>
+
+				<configuration>
+					<verbose>true</verbose>
+
+					<authConfig>
+						<username>raquellima</username>
+						<password>d31cda77-2e70-48a2-a165-30c22d29c741</password>
+					</authConfig>
+
+					<images>
+						<image>
+							<name>raquellima/m154-knw</name>
+							<build>
+								<dockerFileDir>${project.basedir}</dockerFileDir>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+								<tags>
+									<tag>latest</tag>
+								</tags>
+							</build>
+						</image>
+					</images>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>build</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>push</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
 	</build>
