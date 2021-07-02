@@ -1,0 +1,12 @@
+<head>
+	  <link href="fa/css/all.css" rel="stylesheet">
+	  <link rel='stylesheet' type='text/css' href='style/styles.css'>
+</head>
+
+<body>
+  <i class="fab fa-product-hunt" style="font-size:40pt"></i>
+  <br />
+  <br />
+  <span th:text="${product != null} ? 'Id ' + ${product.id} : 'Product not found!'"></span><br />
+  <span th:text="${product != null} ? 'Description: ' + ${product.description}"></span>
+</body>

@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <title>Products</title>
+      <link rel='stylesheet' type='text/css' href='style/styles.css'>
+      <link href="fa/css/all.css" rel="stylesheet">
+   </head>
+   <body>
+      <br />
+      <h1><i class="fas fa-plus-square" style="padding-right:6px;"></i>Create Product</h1>
+      <form method="post" action="/createproduct">
+         <label>Description:</label>
+         <br /><input type="text" name="description"/>
+
+         <p/>
+            <input type="submit" value="Save"/>
+      </form>
+      <span style="color:green" th:text="${msg != null} ? ${msg}"></span>
+      <br />
+      <br />
+      <br />
+      <h1><i class="fas fa-search" style="padding-right:6px;"></i>Find Product</h1>
+      <form method="post" action="/product">
+         <label>Please insert product id:</label>
+         <br />
+         <input type="text" name="id"/>
+         <p/>
+            <input value="Search" type="submit"/>
+      </form>
+      <br />
+   </body>
+</html>
